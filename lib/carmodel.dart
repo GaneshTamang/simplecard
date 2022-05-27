@@ -1,10 +1,12 @@
+import 'package:card/data.dart';
 import 'package:card/ofrmodel.dart';
 import 'package:flutter/material.dart';
 
 class FormPage extends StatelessWidget {
-  var brand = TextEditingController();
   FormPage({Key? key}) : super(key: key);
-
+  final TextEditingController _brand = TextEditingController();
+  final TextEditingController _vehicleno = TextEditingController();
+  final TextEditingController _model = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -32,11 +34,11 @@ class FormPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 40),
                 child: TextFormField(
-                  controller: brand,
+                  controller: _brand,
                   maxLength: 10,
                   textAlign: TextAlign.center,
                   decoration: InputDecoration(
-                      labelText: 'Vehicle Brand',
+                      hintText: 'Vehicle Brand',
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(5))),
                 ),
@@ -47,10 +49,10 @@ class FormPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 40),
                 child: TextFormField(
+                  controller: _vehicleno,
                   textAlign: TextAlign.center,
                   decoration: InputDecoration(
                       hintText: 'Vehicle Number',
-                      labelText: 'Vehicle Number',
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(5))),
                 ),
@@ -61,16 +63,30 @@ class FormPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 40),
                 child: TextFormField(
+                  controller: _model,
                   textAlign: TextAlign.center,
                   decoration: InputDecoration(
                       hintText: 'Vehicle Model',
-                      labelText: 'Vehicle model',
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(5))),
                 ),
               ),
               const SizedBox(
                 height: 35,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => DataPage(
+                        _brand.text,
+                        _vehicleno.text,
+                        _model.text,
+                      ),
+                    ),
+                  );
+                },
+                child: const Text("Submit"),
               ),
             ],
           ),
