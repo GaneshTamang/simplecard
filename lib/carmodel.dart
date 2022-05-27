@@ -72,22 +72,6 @@ class FormPage extends StatelessWidget {
               const SizedBox(
                 height: 35,
               ),
-              SizedBox(
-                height: 45,
-                width: 100,
-                child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (BuildContext context) =>
-                              Model(value: 'brand')));
-                    },
-                    child: const Text(
-                      'submit',
-                      style: TextStyle(
-                        fontSize: 20,
-                      ),
-                    )),
-              ),
             ],
           ),
         ),
