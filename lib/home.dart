@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
         elevation: 0,
         centerTitle: true,
         title: const Text(
-          'profile card',
+          'Profile Card',
           style: TextStyle(
               color: Color.fromARGB(255, 10, 78, 223),
               fontSize: 25,
@@ -49,7 +49,7 @@ class HomePage extends StatelessWidget {
                     'Name:',
                     style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                   ),
-                  Padding(padding: EdgeInsets.all(2)),
+                  Padding(padding: EdgeInsets.all(7)),
                   Text('Ganesh Tamang',
                       textAlign: TextAlign.start,
                       style:
@@ -85,9 +85,9 @@ class HomePage extends StatelessWidget {
                 children: const [
                   Padding(padding: EdgeInsets.all(3)),
                   Text('Contact:'),
-                  Padding(padding: EdgeInsets.all(4)),
-                  Text('9808241778'),
-                  Padding(padding: EdgeInsets.all(12)),
+                  Padding(padding: EdgeInsets.all(6)),
+                  Text('977 9808241778'),
+                  Padding(padding: EdgeInsets.all(2)),
                 ],
               ),
               const SizedBox(
